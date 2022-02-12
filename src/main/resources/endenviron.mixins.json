@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "baguchan.endenviron.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "endenviron.refmap.json",
+  "mixins": [
+    "EndermiteMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
