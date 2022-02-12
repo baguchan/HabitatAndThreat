@@ -1,9 +1,13 @@
 package baguchan.endenviron;
 
+import baguchan.endenviron.client.ClientRegistrar;
 import baguchan.endenviron.registry.ModBiomes;
+import baguchan.endenviron.world.gen.ModPlacements;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -31,9 +35,11 @@ public class EndEnviron {
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
+		DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientRegistrar::setup));
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
+		ModPlacements.init();
 		ModBiomes.setupBiomeInfo();
 	}
 

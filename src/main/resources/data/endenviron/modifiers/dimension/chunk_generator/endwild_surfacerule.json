@@ -2,7 +2,7 @@
   "target": {
     "type": "names",
     "config": [
-      "minecraft:end"
+      "minecraft:the_end"
     ]
   },
   "modifiers": [
@@ -11,7 +11,7 @@
       "config": {
         "surface_rule": {
           "if_true": {
-            "slice_name": "minecraft:end",
+            "slice_name": "endenviron:end_wilds",
             "type": "blueprint:moddedness_slice"
           },
           "then_run": {
