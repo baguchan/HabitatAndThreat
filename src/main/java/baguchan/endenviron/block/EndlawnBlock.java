@@ -39,14 +39,14 @@ public class EndlawnBlock extends Block implements BonemealableBlock {
 	}
 
 	public void performBonemeal(ServerLevel p_55059_, Random p_55060_, BlockPos p_55061_, BlockState p_55062_) {
-		for(BlockPos blockpos : BlockPos.betweenClosed(p_55061_.offset(-1, -1, -1), p_55061_.offset(1, 1, 1))) {
+		for (BlockPos blockpos : BlockPos.betweenClosed(p_55061_.offset(-2, -2, -2), p_55061_.offset(2, 2, 2))) {
 			BlockState blockstate = p_55059_.getBlockState(blockpos);
 			BlockState blockstate1 = p_55059_.getBlockState(blockpos.above());
 
-			if(blockstate1.isAir() && blockstate.getBlock() == Blocks.END_STONE) {
+			if (blockstate1.isAir() && blockstate.getBlock() == Blocks.END_STONE) {
 				p_55059_.setBlock(blockpos, ModBlocks.ENDERLAWN.get().defaultBlockState(), 3);
 			}
-			if (p_55060_.nextInt(4) == 0) {
+			if (p_55060_.nextInt(5) == 0) {
 				break;
 			}
 		}

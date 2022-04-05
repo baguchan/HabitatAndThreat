@@ -46,7 +46,7 @@ public abstract class EndermiteMixin extends Monster {
 		} else {
 			++this.growing;
 
-			if (this.growing >= 300 && this.isAlive()) {
+			if (this.growing >= 2400 && this.isAlive()) {
 				this.convertToEnderbite();
 			}
 		}
@@ -57,6 +57,9 @@ public abstract class EndermiteMixin extends Monster {
 	protected void convertToEnderbite() {
 		Enderbite enderbite = this.convertTo(ModEntities.ENDERBITE.get(), true);
 		if (enderbite != null) {
+			enderbite.setBaby(true);
+			enderbite.setHealth(enderbite.getMaxHealth());
+
 			net.minecraftforge.event.ForgeEventFactory.onLivingConvert(this, enderbite);
 		}
 		this.playSound(SoundEvents.TURTLE_EGG_CRACK, 1.0F, 1.0F);

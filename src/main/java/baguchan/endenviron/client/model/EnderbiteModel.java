@@ -54,13 +54,13 @@ public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
 
 		PartDefinition fetherR = partdefinition.addOrReplaceChild("fetherR", CubeListBuilder.create().texOffs(7, 0).addBox(-3.0F, -0.01F, 0.0F, 3.0F, 0.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 19.0F, -2.0F, 0.7037F, -0.3519F, 0.0F));
 
-		PartDefinition legR = partdefinition.addOrReplaceChild("legR", CubeListBuilder.create().texOffs(0, 5).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 22.0F, -2.0F));
+		PartDefinition legR = partdefinition.addOrReplaceChild("legR", CubeListBuilder.create().texOffs(0, 5).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 2.0F, -2.0F));
 
-		PartDefinition legR2 = partdefinition.addOrReplaceChild("legR2", CubeListBuilder.create().texOffs(0, 5).addBox(-0.75F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 22.0F, 3.0F));
+		PartDefinition legR2 = partdefinition.addOrReplaceChild("legR2", CubeListBuilder.create().texOffs(0, 5).addBox(-0.75F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 2.0F, 3.0F));
 
-		PartDefinition legL = partdefinition.addOrReplaceChild("legL", CubeListBuilder.create().texOffs(0, 5).addBox(0.0F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 22.0F, -2.0F));
+		PartDefinition legL = partdefinition.addOrReplaceChild("legL", CubeListBuilder.create().texOffs(0, 5).addBox(0.0F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 2.0F, -2.0F));
 
-		PartDefinition legL2 = partdefinition.addOrReplaceChild("legL2", CubeListBuilder.create().texOffs(0, 5).addBox(1.0F, 0.0F, 4.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 22.0F, -2.0F));
+		PartDefinition legL2 = partdefinition.addOrReplaceChild("legL2", CubeListBuilder.create().texOffs(0, 5).addBox(1.0F, 0.0F, 4.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 2.0F, -2.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

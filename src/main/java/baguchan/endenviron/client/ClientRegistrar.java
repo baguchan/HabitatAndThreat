@@ -2,6 +2,7 @@ package baguchan.endenviron.client;
 
 import baguchan.endenviron.EndEnviron;
 import baguchan.endenviron.client.model.EnderbiteModel;
+import baguchan.endenviron.client.model.GrownedEnderbiteModel;
 import baguchan.endenviron.client.render.EnderbiteRender;
 import baguchan.endenviron.registry.ModBlocks;
 import baguchan.endenviron.registry.ModEntities;
@@ -26,6 +27,7 @@ public class ClientRegistrar {
 	@SubscribeEvent
 	public static void registerLayerDefinition(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModModelLayers.ENDERBITE, EnderbiteModel::createBodyLayer);
+		event.registerLayerDefinition(ModModelLayers.GROWN_ENDERBITE, GrownedEnderbiteModel::createBodyLayer);
 	}
 
 	public static void renderBlockLayer() {

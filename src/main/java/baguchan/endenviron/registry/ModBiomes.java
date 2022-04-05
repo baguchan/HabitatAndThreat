@@ -24,9 +24,8 @@ public class ModBiomes {
 		//BiomeUtil.addEndBiome(Climate.parameters(-0.25F, 0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), END_WILD.getKey());
 	}
 
-
 	private static Biome createEndWild() {
-		MobSpawnSettings mobspawnsettings = (new MobSpawnSettings.Builder()).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ENDERBITE.get(), 10, 3, 4)).build();
+		MobSpawnSettings mobspawnsettings = (new MobSpawnSettings.Builder()).addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.ENDERBITE.get(), 10, 3, 4)).build();
 		BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder());
 		biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacements.PATCH_END_GRASS);
 
