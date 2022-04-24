@@ -2,6 +2,7 @@ package baguchan.habitat_and_threat.data;
 
 import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.registry.ModBlocks;
+import baguchan.habitat_and_threat.registry.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -21,6 +22,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		this.itemBlockFlat(ModBlocks.END_GRASS.get());
 		this.toBlock(ModBlocks.ENDERBITE_COCOON.get());
 		this.toBlock(ModBlocks.ENDERMITE_EGG.get());
+		this.egg(ModItems.WILDFIRE_SPAWN_EGG.get());
 	}
 
 	private ItemModelBuilder generated(String name, ResourceLocation... layers) {

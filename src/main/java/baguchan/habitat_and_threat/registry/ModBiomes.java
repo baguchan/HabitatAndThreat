@@ -2,6 +2,7 @@ package baguchan.habitat_and_threat.registry;
 
 import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.world.gen.ModPlacements;
+import com.teamabnormals.blueprint.core.util.BiomeUtil;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
@@ -21,7 +22,7 @@ public class ModBiomes {
 	@SuppressWarnings("unchecked")
 	public static void setupBiomeInfo() {
 		BiomeDictionary.addTypes(END_WILD.getKey(), BiomeDictionary.Type.END, BiomeDictionary.Type.MAGICAL, BiomeDictionary.Type.PLAINS);
-		//BiomeUtil.addEndBiome(Climate.parameters(-0.25F, 0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), END_WILD.getKey());
+		BiomeUtil.markEndBiomeCustomMusic(END_WILD.getKey());
 	}
 
 	private static Biome createEndWild() {

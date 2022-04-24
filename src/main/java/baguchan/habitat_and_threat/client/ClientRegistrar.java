@@ -2,7 +2,9 @@ package baguchan.habitat_and_threat.client;
 
 import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.client.model.EnderbiteModel;
+import baguchan.habitat_and_threat.client.model.WildFireModel;
 import baguchan.habitat_and_threat.client.render.EnderbiteRender;
+import baguchan.habitat_and_threat.client.render.WildFireRender;
 import baguchan.habitat_and_threat.registry.ModBlocks;
 import baguchan.habitat_and_threat.registry.ModEntities;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -21,11 +23,13 @@ public class ClientRegistrar {
 	@SubscribeEvent
 	public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(ModEntities.ENDERBITE.get(), EnderbiteRender::new);
+		event.registerEntityRenderer(ModEntities.WILDFIRE.get(), WildFireRender::new);
 	}
 
 	@SubscribeEvent
 	public static void registerLayerDefinition(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModModelLayers.ENDERBITE, EnderbiteModel::createBodyLayer);
+		event.registerLayerDefinition(ModModelLayers.WILDFIRE, WildFireModel::createBodyLayer);
 	}
 
 	public static void renderBlockLayer() {
