@@ -20,7 +20,7 @@ public class ModBlocks {
 	private static final BlockSubRegistryHelper HELPERS = HabitatAndThreat.REGISTRY_HELPER.getBlockSubHelper();
 	public static final RegistryObject<Block> END_GRASS = HELPERS.createBlock("end_grass", () -> new EndGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.SAND).sound(SoundType.GRASS).instabreak().noCollission()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ENDERLAWN = HELPERS.createBlock("enderlawn", () -> new EndlawnBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.SAND).requiresCorrectToolForDrops().randomTicks().sound(SoundType.NYLIUM).strength(3.5F, 9.5F)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> ENDERBITE_COCOON = HELPERS.createBlock("enderbite_cocoon", () -> new EnderbiteCocoonBlock(BlockBehaviour.Properties.of(Material.EGG).sound(SoundType.METAL).strength(0.45F, 0.75F).randomTicks()), CreativeModeTab.TAB_MATERIALS);
+	public static final RegistryObject<Block> ENDERBITE_COCOON = HELPERS.createBlock("enderbite_cocoon", () -> new EnderbiteCocoonBlock(BlockBehaviour.Properties.of(Material.EGG).sound(SoundType.WOOL).strength(0.45F, 0.75F).randomTicks()), CreativeModeTab.TAB_MATERIALS);
 	public static final RegistryObject<Block> ENDERMITE_EGG = HELPERS.createBlock("endermite_egg", () -> new EndermiteEggBlock(BlockBehaviour.Properties.of(Material.EGG).sound(SoundType.METAL).strength(0.25F, 0.5F).randomTicks()), CreativeModeTab.TAB_MATERIALS);
 
 }

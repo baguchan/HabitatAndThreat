@@ -9,7 +9,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ambient.Bat;
-import net.minecraft.world.entity.animal.Turtle;
+import net.minecraft.world.entity.monster.Endermite;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -101,7 +101,7 @@ public class EnderbiteCocoonBlock extends Block {
 
 
 	private boolean canDestroyEgg(Level p_57768_, Entity p_57769_) {
-		if (!(p_57769_ instanceof Turtle) && !(p_57769_ instanceof Bat)) {
+		if (!(p_57769_ instanceof Enderbite) && !(p_57769_ instanceof Endermite) && !(p_57769_ instanceof Bat)) {
 			if (!(p_57769_ instanceof LivingEntity)) {
 				return false;
 			} else {
