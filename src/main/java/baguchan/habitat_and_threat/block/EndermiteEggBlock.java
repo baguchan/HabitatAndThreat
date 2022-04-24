@@ -67,7 +67,7 @@ public class EndermiteEggBlock extends Block {
 	}
 
 	public void randomTick(BlockState p_57804_, ServerLevel p_57805_, BlockPos p_57806_, Random p_57807_) {
-		if (this.shouldUpdateHatchLevel(p_57805_) && onEndStone(p_57805_, p_57806_)) {
+		if (this.shouldUpdateHatchLevel(p_57805_)) {
 			int i = p_57804_.getValue(HATCH);
 			if (i < 2) {
 				p_57805_.playSound((Player) null, p_57806_, SoundEvents.TURTLE_EGG_CRACK, SoundSource.BLOCKS, 0.7F, 0.9F + p_57807_.nextFloat() * 0.2F);
@@ -92,7 +92,7 @@ public class EndermiteEggBlock extends Block {
 	}
 
 	public void onPlace(BlockState p_57814_, Level p_57815_, BlockPos p_57816_, BlockState p_57817_, boolean p_57818_) {
-		if (onEndStone(p_57815_, p_57816_) && !p_57815_.isClientSide) {
+		if (!p_57815_.isClientSide) {
 			p_57815_.levelEvent(2005, p_57816_, 0);
 		}
 	}
