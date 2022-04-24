@@ -27,7 +27,6 @@ public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
 	public EnderbiteModel(ModelPart root) {
 		this.body = root.getChild("body");
 		this.head = this.body.getChild("head");
-
 		this.back = this.body.getChild("back");
 		this.fetherL = this.body.getChild("fetherL");
 		this.fetherR = this.body.getChild("fetherR");
@@ -88,14 +87,6 @@ public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		head.render(poseStack, buffer, packedLight, packedOverlay);
 		body.render(poseStack, buffer, packedLight, packedOverlay);
-		back.render(poseStack, buffer, packedLight, packedOverlay);
-		fetherL.render(poseStack, buffer, packedLight, packedOverlay);
-		fetherR.render(poseStack, buffer, packedLight, packedOverlay);
-		legR.render(poseStack, buffer, packedLight, packedOverlay);
-		legR2.render(poseStack, buffer, packedLight, packedOverlay);
-		legL.render(poseStack, buffer, packedLight, packedOverlay);
-		legL2.render(poseStack, buffer, packedLight, packedOverlay);
 	}
 }
