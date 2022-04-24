@@ -45,7 +45,7 @@ public abstract class EndermiteMixin extends Monster {
 		} else {
 			++this.growing;
 
-			if (this.growing >= 2400 && this.isAlive()) {
+			if (this.growing >= 2400 && this.isAlive() && this.getTarget() == null && this.level.getBlockState(this.blockPosition()).isAir()) {
 				this.convertToEnderbite();
 			}
 		}
