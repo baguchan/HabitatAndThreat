@@ -13,13 +13,18 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = HabitatAndThreat.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
 	private static final EntitySubRegistryHelper HELPERS = HabitatAndThreat.REGISTRY_HELPER.getEntitySubHelper();
+	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, HabitatAndThreat.MODID);
+
+
 	public static final RegistryObject<EntityType<Enderbite>> ENDERBITE = HELPERS.createLivingEntity("enderbite", Enderbite::new, MobCategory.MONSTER, 0.6F, 0.5F);
-	public static final RegistryObject<EntityType<WildFire>> WILDFIRE = HELPERS.createLivingEntity("wildfire", WildFire::new, MobCategory.MONSTER, 0.6F, 1.95F);
+	public static final RegistryObject<EntityType<WildFire>> WILDFIRE = ENTITIES.register("wildfire", () -> EntityType.Builder.of(WildFire::new, MobCategory.MONSTER).sized(0.6F, 1.95F).fireImmune().clientTrackingRange(8).build(HabitatAndThreat.MODID + ":wildfire"));
 
 
 	private static String prefix(String path) {

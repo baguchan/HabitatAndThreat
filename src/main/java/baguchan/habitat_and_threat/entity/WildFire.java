@@ -87,13 +87,13 @@ public class WildFire extends Blaze {
 		}
 
 		for (int id = 0; id < 4; id++) {
-			if (!p_21016_.isBypassArmor() && !flag) {
+			if (!p_21016_.isBypassArmor() && !p_21016_.isFire() && !flag) {
 				Vec3 vec32 = p_21016_.getSourcePosition();
 				if (vec32 != null) {
 					Vec3 vec3 = this.getShieldAndViewVector(getShieldRotation() + id * 90.0F);
 					Vec3 vec31 = vec32.vectorTo(this.position()).normalize();
 					vec31 = new Vec3(vec31.x, 0.0D, vec31.z);
-					if (vec31.dot(vec3) < 0.0D && this.getShieldHealth(id) > 0.0F) {
+					if (vec31.dot(vec3) < -0.1D && this.getShieldHealth(id) > 0.0F) {
 						this.setShieldHealth(getShieldHealth(id) - p_21017_, id);
 						if (getShieldHealth(id) <= 0.0F) {
 							this.playSound(SoundEvents.SHIELD_BREAK, 1.0F, 1.0F);
@@ -108,12 +108,8 @@ public class WildFire extends Blaze {
 		return super.hurt(p_21016_, p_21017_);
 	}
 
-	public Vec3 getShieldVector(float rotY) {
-		return this.calculateViewVector(0.0F, this.calculateShieldVector(rotY));
-	}
-
 	public Vec3 getShieldAndViewVector(float rotY) {
-		return this.calculateViewVector(0.0F, this.getViewYRot(1.0F) + this.calculateShieldVector(rotY));
+		return this.calculateViewVector(0.0F, this.getYRot() + rotY);
 	}
 
 

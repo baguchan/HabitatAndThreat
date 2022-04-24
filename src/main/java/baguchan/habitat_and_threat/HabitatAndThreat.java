@@ -2,6 +2,7 @@ package baguchan.habitat_and_threat;
 
 import baguchan.habitat_and_threat.client.ClientRegistrar;
 import baguchan.habitat_and_threat.registry.ModBiomes;
+import baguchan.habitat_and_threat.registry.ModEntities;
 import baguchan.habitat_and_threat.world.gen.ModPlacements;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +32,7 @@ public class HabitatAndThreat {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		ModEntities.ENTITIES.register(bus);
 		REGISTRY_HELPER.register(bus);
 
 		// Register ourselves for server and other game events we are interested in
