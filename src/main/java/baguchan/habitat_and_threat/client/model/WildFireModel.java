@@ -53,10 +53,13 @@ public class WildFireModel<T extends WildFire> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.shield.yRot = entity.calculateShieldVector(entity.getShieldRotation() + 1 * 1.5708F);
-		this.shield2.yRot = entity.calculateShieldVector(entity.getShieldRotation() + 2 * 1.5708F);
-		this.shield3.yRot = entity.calculateShieldVector(entity.getShieldRotation() + 3 * 1.5708F);
-		this.shield4.yRot = entity.calculateShieldVector(entity.getShieldRotation() + 4 * 1.5708F);
+		this.head.yRot = netHeadYaw * ((float) Math.PI / 180F);
+		this.head.xRot = headPitch * ((float) Math.PI / 180F);
+
+		this.shield.yRot = entity.getShieldRotation() * ((float) Math.PI / 180F) + 0 * 1.5708F;
+		this.shield2.yRot = entity.getShieldRotation() * ((float) Math.PI / 180F) + 1 * 1.5708F;
+		this.shield3.yRot = entity.getShieldRotation() * ((float) Math.PI / 180F) + 2 * 1.5708F;
+		this.shield4.yRot = entity.getShieldRotation() * ((float) Math.PI / 180F) + 3 * 1.5708F;
 
 		this.shield.visible = entity.getShieldHealth(1) > 0.0F;
 		this.shield2.visible = entity.getShieldHealth(2) > 0.0F;
