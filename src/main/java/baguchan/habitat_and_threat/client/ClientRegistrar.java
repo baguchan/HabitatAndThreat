@@ -2,7 +2,6 @@ package baguchan.habitat_and_threat.client;
 
 import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.client.model.EnderbiteModel;
-import baguchan.habitat_and_threat.client.model.GrownedEnderbiteModel;
 import baguchan.habitat_and_threat.client.render.EnderbiteRender;
 import baguchan.habitat_and_threat.registry.ModBlocks;
 import baguchan.habitat_and_threat.registry.ModEntities;
@@ -27,7 +26,6 @@ public class ClientRegistrar {
 	@SubscribeEvent
 	public static void registerLayerDefinition(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModModelLayers.ENDERBITE, EnderbiteModel::createBodyLayer);
-		event.registerLayerDefinition(ModModelLayers.GROWN_ENDERBITE, GrownedEnderbiteModel::createBodyLayer);
 	}
 
 	public static void renderBlockLayer() {
