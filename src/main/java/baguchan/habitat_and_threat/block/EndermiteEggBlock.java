@@ -39,13 +39,13 @@ public class EndermiteEggBlock extends Block {
 	}
 
 	public void stepOn(Level p_154857_, BlockPos p_154858_, BlockState p_154859_, Entity p_154860_) {
-		this.destroyEgg(p_154857_, p_154859_, p_154858_, p_154860_, 200);
+		this.destroyEgg(p_154857_, p_154859_, p_154858_, p_154860_, 100);
 		super.stepOn(p_154857_, p_154858_, p_154859_, p_154860_);
 	}
 
 	public void fallOn(Level p_154845_, BlockState p_154846_, BlockPos p_154847_, Entity p_154848_, float p_154849_) {
 		if (!(p_154848_ instanceof Zombie)) {
-			this.destroyEgg(p_154845_, p_154846_, p_154847_, p_154848_, 50);
+			this.destroyEgg(p_154845_, p_154846_, p_154847_, p_154848_, 3);
 		}
 
 		super.fallOn(p_154845_, p_154846_, p_154847_, p_154848_, p_154849_);

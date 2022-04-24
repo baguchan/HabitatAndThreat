@@ -40,7 +40,7 @@ public class EnderbiteCocoonBlock extends Block {
 
 	public void fallOn(Level p_154845_, BlockState p_154846_, BlockPos p_154847_, Entity p_154848_, float p_154849_) {
 		if (!(p_154848_ instanceof Zombie)) {
-			this.destroyEgg(p_154845_, p_154846_, p_154847_, p_154848_, 50);
+			this.destroyEgg(p_154845_, p_154846_, p_154847_, p_154848_, 20);
 		}
 
 		super.fallOn(p_154845_, p_154846_, p_154847_, p_154848_, p_154849_);
