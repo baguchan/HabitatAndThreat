@@ -25,15 +25,16 @@ public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
 	private final ModelPart legL2;
 
 	public EnderbiteModel(ModelPart root) {
-		this.head = root.getChild("head");
 		this.body = root.getChild("body");
-		this.back = root.getChild("back");
-		this.fetherL = root.getChild("fetherL");
-		this.fetherR = root.getChild("fetherR");
-		this.legR = root.getChild("legR");
-		this.legR2 = root.getChild("legR2");
-		this.legL = root.getChild("legL");
-		this.legL2 = root.getChild("legL2");
+		this.head = this.body.getChild("head");
+
+		this.back = this.body.getChild("back");
+		this.fetherL = this.body.getChild("fetherL");
+		this.fetherR = this.body.getChild("fetherR");
+		this.legR = this.body.getChild("legR");
+		this.legR2 = this.body.getChild("legR2");
+		this.legL = this.body.getChild("legL");
+		this.legL2 = this.body.getChild("legL2");
 	}
 
 	public static LayerDefinition createBodyLayer() {
