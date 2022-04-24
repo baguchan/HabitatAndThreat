@@ -56,5 +56,6 @@ public abstract class EndermiteMixin extends Monster {
 	protected void convertToEnderbite() {
 		this.level.setBlock(this.blockPosition(), ModBlocks.ENDERBITE_COCOON.get().defaultBlockState(), 3);
 		this.playSound(SoundEvents.TURTLE_EGG_CRACK, 1.0F, 1.0F);
+		this.discard();
 	}
 }
