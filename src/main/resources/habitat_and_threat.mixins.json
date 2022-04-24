@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "baguchan.habitat_and_threat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "habitat_and_threat.refmap.json",
+  "mixins": [
+    "EndermiteMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
