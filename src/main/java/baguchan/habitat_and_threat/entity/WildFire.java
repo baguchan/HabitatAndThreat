@@ -90,7 +90,7 @@ public class WildFire extends Blaze {
 			if (!p_21016_.isBypassArmor() && !flag) {
 				Vec3 vec32 = p_21016_.getSourcePosition();
 				if (vec32 != null) {
-					Vec3 vec3 = this.getShieldVector(getShieldRotation() + id * 90.0F);
+					Vec3 vec3 = this.getShieldAndViewVector(getShieldRotation() + id * 90.0F);
 					Vec3 vec31 = vec32.vectorTo(this.position()).normalize();
 					vec31 = new Vec3(vec31.x, 0.0D, vec31.z);
 					if (vec31.dot(vec3) < 0.0D && this.getShieldHealth(id) > 0.0F) {
@@ -111,6 +111,11 @@ public class WildFire extends Blaze {
 	public Vec3 getShieldVector(float rotY) {
 		return this.calculateViewVector(0.0F, this.calculateShieldVector(rotY));
 	}
+
+	public Vec3 getShieldAndViewVector(float rotY) {
+		return this.calculateViewVector(0.0F, this.getViewYRot(1.0F) + this.calculateShieldVector(rotY));
+	}
+
 
 	public float calculateShieldVector(float rotY) {
 		if (rotY > 360.0F) {
