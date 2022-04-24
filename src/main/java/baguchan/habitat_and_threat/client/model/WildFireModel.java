@@ -58,10 +58,10 @@ public class WildFireModel<T extends WildFire> extends EntityModel<T> {
 		this.shield3.yRot = entity.calculateShieldVector(entity.getShieldRotation() + 3 * 1.5708F);
 		this.shield4.yRot = entity.calculateShieldVector(entity.getShieldRotation() + 4 * 1.5708F);
 
-		this.shield.visible = entity.getShieldHealth(1) <= 0.0F;
-		this.shield2.visible = entity.getShieldHealth(2) <= 0.0F;
-		this.shield3.visible = entity.getShieldHealth(3) <= 0.0F;
-		this.shield4.visible = entity.getShieldHealth(4) <= 0.0F;
+		this.shield.visible = entity.getShieldHealth(1) > 0.0F;
+		this.shield2.visible = entity.getShieldHealth(2) > 0.0F;
+		this.shield3.visible = entity.getShieldHealth(3) > 0.0F;
+		this.shield4.visible = entity.getShieldHealth(4) > 0.0F;
 	}
 
 	@Override

@@ -4,12 +4,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -26,16 +26,16 @@ public class WildFire extends Blaze {
 
 	public WildFire(EntityType<? extends WildFire> p_33002_, Level p_33003_) {
 		super(p_33002_, p_33003_);
-		this.moveControl = new FlyingMoveControl(this, 10, false);
 		this.xpReward = 20;
 	}
 
 	protected void defineSynchedData() {
+		super.defineSynchedData();
 		this.entityData.define(DATA_SHIELD_HEALTH_ID, 20F);
 		this.entityData.define(DATA_SHIELD_HEALTH_2_ID, 20F);
 		this.entityData.define(DATA_SHIELD_HEALTH_3_ID, 20F);
 		this.entityData.define(DATA_SHIELD_HEALTH_4_ID, 20F);
-		this.entityData.define(DATA_SHIELD_ROTATION_ID, 20F);
+		this.entityData.define(DATA_SHIELD_ROTATION_ID, 0F);
 	}
 
 	@Override
@@ -75,9 +75,10 @@ public class WildFire extends Blaze {
 	}
 
 	@Override
-	public boolean isDamageSourceBlocked(DamageSource p_21276_) {
-		Entity entity = p_21276_.getDirectEntity();
+	public boolean hurt(DamageSource p_21016_, float p_21017_) {
+		Entity entity = p_21016_.getDirectEntity();
 		boolean flag = false;
+
 		if (entity instanceof AbstractArrow) {
 			AbstractArrow abstractarrow = (AbstractArrow) entity;
 			if (abstractarrow.getPierceLevel() > 0) {
@@ -86,21 +87,25 @@ public class WildFire extends Blaze {
 		}
 
 		for (int id = 1; id < 5; id++) {
-			if (!p_21276_.isBypassArmor() && !flag) {
-				Vec3 vec32 = p_21276_.getSourcePosition();
+			if (!p_21016_.isBypassArmor() && !flag) {
+				Vec3 vec32 = p_21016_.getSourcePosition();
 				if (vec32 != null) {
 					Vec3 vec3 = this.getShieldVector(calculateShieldVector(getShieldRotation() + id * 1.5708F));
 					Vec3 vec31 = vec32.vectorTo(this.position()).normalize();
 					vec31 = new Vec3(vec31.x, 0.0D, vec31.z);
 					if (vec31.dot(vec3) < 0.0D && this.getShieldHealth(id) > 0.0F) {
-						this.setShieldHealth(getShieldHealth(id), id);
-						return true;
+						this.setShieldHealth(getShieldHealth(id) - p_21017_, id);
+						if (getShieldHealth(id) <= 0.0F) {
+							this.playSound(SoundEvents.SHIELD_BREAK, 1.0F, 1.0F);
+						}
+						this.playSound(SoundEvents.SHIELD_BLOCK, 1.0F, 1.0F);
+						return false;
 					}
 				}
 			}
 		}
 
-		return false;
+		return super.hurt(p_21016_, p_21017_);
 	}
 
 	public Vec3 getShieldVector(float rotY) {
@@ -139,6 +144,6 @@ public class WildFire extends Blaze {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.ATTACK_DAMAGE, 6.0D).add(Attributes.MAX_HEALTH, 30.0F).add(Attributes.MOVEMENT_SPEED, (double) 0.23F).add(Attributes.FOLLOW_RANGE, 48.0D);
+		return Monster.createMonsterAttributes().add(Attributes.ATTACK_DAMAGE, 7.0D).add(Attributes.MAX_HEALTH, 40.0F).add(Attributes.MOVEMENT_SPEED, (double) 0.23F).add(Attributes.FOLLOW_RANGE, 48.0D);
 	}
 }
