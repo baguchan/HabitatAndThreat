@@ -48,20 +48,20 @@ public class WildFire extends Blaze {
 
 	public void setShieldHealth(float health, int id) {
 		switch (id) {
-			case 1 -> this.entityData.set(DATA_SHIELD_HEALTH_ID, health);
-			case 2 -> this.entityData.set(DATA_SHIELD_HEALTH_2_ID, health);
-			case 3 -> this.entityData.set(DATA_SHIELD_HEALTH_3_ID, health);
-			case 4 -> this.entityData.set(DATA_SHIELD_HEALTH_4_ID, health);
+			case 0 -> this.entityData.set(DATA_SHIELD_HEALTH_ID, health);
+			case 1 -> this.entityData.set(DATA_SHIELD_HEALTH_2_ID, health);
+			case 2 -> this.entityData.set(DATA_SHIELD_HEALTH_3_ID, health);
+			case 3 -> this.entityData.set(DATA_SHIELD_HEALTH_4_ID, health);
 			default -> this.entityData.set(DATA_SHIELD_HEALTH_ID, health);
 		}
 	}
 
 	public float getShieldHealth(int id) {
 		return switch (id) {
-			case 1 -> this.entityData.get(DATA_SHIELD_HEALTH_ID);
-			case 2 -> this.entityData.get(DATA_SHIELD_HEALTH_2_ID);
-			case 3 -> this.entityData.get(DATA_SHIELD_HEALTH_3_ID);
-			case 4 -> this.entityData.get(DATA_SHIELD_HEALTH_4_ID);
+			case 0 -> this.entityData.get(DATA_SHIELD_HEALTH_ID);
+			case 1 -> this.entityData.get(DATA_SHIELD_HEALTH_2_ID);
+			case 2 -> this.entityData.get(DATA_SHIELD_HEALTH_3_ID);
+			case 3 -> this.entityData.get(DATA_SHIELD_HEALTH_4_ID);
 			default -> this.entityData.get(DATA_SHIELD_HEALTH_ID);
 		};
 	}
@@ -86,7 +86,7 @@ public class WildFire extends Blaze {
 			}
 		}
 
-		for (int id = 1; id < 5; id++) {
+		for (int id = 0; id < 4; id++) {
 			if (!p_21016_.isBypassArmor() && !flag) {
 				Vec3 vec32 = p_21016_.getSourcePosition();
 				if (vec32 != null) {
@@ -126,20 +126,20 @@ public class WildFire extends Blaze {
 	@Override
 	public void addAdditionalSaveData(CompoundTag p_21484_) {
 		super.addAdditionalSaveData(p_21484_);
-		p_21484_.putFloat("ShieldHealth1", getShieldHealth(1));
-		p_21484_.putFloat("ShieldHealth2", getShieldHealth(2));
-		p_21484_.putFloat("ShieldHealth3", getShieldHealth(3));
-		p_21484_.putFloat("ShieldHealth4", getShieldHealth(4));
+		p_21484_.putFloat("ShieldHealth1", getShieldHealth(0));
+		p_21484_.putFloat("ShieldHealth2", getShieldHealth(1));
+		p_21484_.putFloat("ShieldHealth3", getShieldHealth(2));
+		p_21484_.putFloat("ShieldHealth4", getShieldHealth(3));
 		p_21484_.putFloat("ShieldRotation", getShieldRotation());
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag p_21450_) {
 		super.readAdditionalSaveData(p_21450_);
-		this.setShieldHealth(p_21450_.getFloat("ShieldHealth1"), 1);
-		this.setShieldHealth(p_21450_.getFloat("ShieldHealth2"), 2);
-		this.setShieldHealth(p_21450_.getFloat("ShieldHealth3"), 3);
-		this.setShieldHealth(p_21450_.getFloat("ShieldHealth4"), 4);
+		this.setShieldHealth(p_21450_.getFloat("ShieldHealth1"), 0);
+		this.setShieldHealth(p_21450_.getFloat("ShieldHealth2"), 1);
+		this.setShieldHealth(p_21450_.getFloat("ShieldHealth3"), 2);
+		this.setShieldHealth(p_21450_.getFloat("ShieldHealth4"), 3);
 		this.setShieldRotation(p_21450_.getFloat("ShieldRotation"));
 	}
 

@@ -61,10 +61,11 @@ public class WildFireModel<T extends WildFire> extends EntityModel<T> {
 		this.shield3.yRot = entity.getShieldRotation() * ((float) Math.PI / 180F) + 2 * 1.5708F;
 		this.shield4.yRot = entity.getShieldRotation() * ((float) Math.PI / 180F) + 3 * 1.5708F;
 
-		this.shield.visible = entity.getShieldHealth(1) > 0.0F;
-		this.shield2.visible = entity.getShieldHealth(2) > 0.0F;
-		this.shield3.visible = entity.getShieldHealth(3) > 0.0F;
-		this.shield4.visible = entity.getShieldHealth(4) > 0.0F;
+		this.shield.visible = entity.getShieldHealth(0) > 0.0F;
+		this.shield2.visible = entity.getShieldHealth(1) > 0.0F;
+		this.shield3.visible = entity.getShieldHealth(2) > 0.0F;
+		this.shield4.visible = entity.getShieldHealth(3) > 0.0F;
+		this.helmet.copyFrom(this.head);
 	}
 
 	@Override
