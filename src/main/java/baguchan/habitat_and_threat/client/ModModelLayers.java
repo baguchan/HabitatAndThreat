@@ -7,4 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 public class ModModelLayers {
 	public static final ModelLayerLocation ENDERBITE = new ModelLayerLocation(new ResourceLocation(HabitatAndThreat.MODID, "enderbite"), "enderbite");
 	public static final ModelLayerLocation WILDFIRE = new ModelLayerLocation(new ResourceLocation(HabitatAndThreat.MODID, "wildfire"), "wildfire");
+	public static final ModelLayerLocation WILDFIRE_SHIELD = new ModelLayerLocation(new ResourceLocation(HabitatAndThreat.MODID, "wildfire_shield"), "wildfire_shield");
+
+
 }

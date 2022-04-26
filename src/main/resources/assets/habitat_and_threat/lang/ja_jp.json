@@ -1,0 +1,12 @@
+{
+  "item.habitat_and_threat.wildfire_spawn_egg": "ワイルドファイアのスポーンエッグ",
+  "item.habitat_and_threat.wildfire_shield": "ワイルドファイアのシールド",
+  "item.habitat_and_threat.raw_wildfire_shield": "生のワイルドファイアのシールド",
+  "block.habitat_and_threat.end_grass": "エンドの草",
+  "block.habitat_and_threat.enderlawn": "エンダーラウン",
+  "block.habitat_and_threat.enderbite_cocoon": "エンダーバイトの繭",
+  "block.habitat_and_threat.endermite_egg": "エンダーマイトの卵",
+  "entity.habitat_and_threat.enderbite": "エンダーバイト",
+  "entity.habitat_and_threat.wildfire": "ワイルドファイア",
+  "death.attack.wildfire.explosion.attack": "%1$sは、%2$sが引き起こした爆発によって焼けた"
+}

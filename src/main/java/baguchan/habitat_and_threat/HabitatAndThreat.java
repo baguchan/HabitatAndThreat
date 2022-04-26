@@ -5,6 +5,7 @@ import baguchan.habitat_and_threat.registry.ModBiomes;
 import baguchan.habitat_and_threat.registry.ModEntities;
 import baguchan.habitat_and_threat.world.gen.ModPlacements;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -38,6 +39,10 @@ public class HabitatAndThreat {
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
 		DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientRegistrar::setup));
+	}
+
+	public static ResourceLocation prefix(String s) {
+		return new ResourceLocation(HabitatAndThreat.MODID, s);
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

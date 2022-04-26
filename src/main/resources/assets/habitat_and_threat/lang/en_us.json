@@ -1,9 +1,12 @@
 {
   "item.habitat_and_threat.wildfire_spawn_egg": "Wild Fire SpawnEgg",
+  "item.habitat_and_threat.wildfire_shield": "Wild Fire Shield",
+  "item.habitat_and_threat.raw_wildfire_shield": "Raw Wild Fire Shield",
   "block.habitat_and_threat.end_grass": "EndGrass",
   "block.habitat_and_threat.enderlawn": "Enderlawn",
   "block.habitat_and_threat.enderbite_cocoon": "Enderbite Cocoon",
   "block.habitat_and_threat.endermite_egg": "Endermite Egg",
   "entity.habitat_and_threat.enderbite": "Enderbite",
-  "entity.habitat_and_threat.wildfire": "Wild Fire"
+  "entity.habitat_and_threat.wildfire": "Wild Fire",
+  "death.attack.wildfire.explosion.attack": "%1$s was burned by a fire explosion from %2$s"
 }
