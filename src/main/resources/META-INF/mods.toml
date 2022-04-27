@@ -34,7 +34,7 @@ credits = "" #optional
 authors = "bagu_chan" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-This mod expansion end envriment!
+This mod focuses on making the vannila enviroment mechanic more unique and tweek.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.habitat_and_threat]] #optional
