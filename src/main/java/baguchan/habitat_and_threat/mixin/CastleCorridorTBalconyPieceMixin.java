@@ -20,16 +20,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(NetherBridgePieces.CastleEntrance.class)
-public abstract class CastleEntranceMixin extends NetherBridgePieces.NetherBridgePiece {
+@Mixin(NetherBridgePieces.CastleCorridorTBalconyPiece.class)
+public abstract class CastleCorridorTBalconyPieceMixin extends NetherBridgePieces.NetherBridgePiece {
 
-	protected CastleEntranceMixin(StructurePieceType p_209887_, int p_209888_, BoundingBox p_209889_) {
+	protected CastleCorridorTBalconyPieceMixin(StructurePieceType p_209887_, int p_209888_, BoundingBox p_209889_) {
 		super(p_209887_, p_209888_, p_209889_);
 	}
 
 	@Inject(method = "postProcess", at = @At("TAIL"))
 	public void postProcess(WorldGenLevel p_192136_, StructureFeatureManager p_192137_, ChunkGenerator p_192138_, Random p_192139_, BoundingBox p_192140_, ChunkPos p_192141_, BlockPos p_192142_, CallbackInfo callbackInfo) {
-		BlockPos blockpos = this.getWorldPos(6, 6, 6);
+		BlockPos blockpos = this.getWorldPos(4, 3, 5);
 
 		if (p_192140_.isInside(blockpos)) {
 			WildFire wildFire = ModEntities.WILDFIRE.get().create(p_192136_.getLevel());

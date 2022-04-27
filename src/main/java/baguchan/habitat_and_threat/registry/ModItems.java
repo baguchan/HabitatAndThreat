@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HabitatAndThreat.MODID);
 
-	public static final RegistryObject<ForgeSpawnEggItem> WILDFIRE_SPAWN_EGG = ITEMS.register("wildfire", () -> new ForgeSpawnEggItem(ModEntities.WILDFIRE, 0xF9D731, 0x381007, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+	public static final RegistryObject<ForgeSpawnEggItem> WILDFIRE_SPAWN_EGG = ITEMS.register("wildfire_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.WILDFIRE, 0xF9D731, 0x381007, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
 	public static final RegistryObject<WildFireShieldItem> WILDFIRE_SHIELD = ITEMS.register("wildfire_shield", () -> new WildFireShieldItem(new Item.Properties().stacksTo(1).durability(560).tab(CreativeModeTab.TAB_COMBAT)));
 

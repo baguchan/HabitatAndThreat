@@ -228,6 +228,11 @@ public class WildFire extends Blaze {
 		return this.isCharged();
 	}
 
+	@Override
+	protected boolean shouldDespawnInPeaceful() {
+		return false;
+	}
+
 	public void handleEntityEvent(byte p_28456_) {
 		if (p_28456_ == 45) {
 			for (int i = 0; i < 8; ++i) {

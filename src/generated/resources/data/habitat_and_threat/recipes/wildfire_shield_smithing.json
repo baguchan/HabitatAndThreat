@@ -4,7 +4,7 @@
     "item": "minecraft:shield"
   },
   "addition": {
-    "item": "minecraft:netherite_ingot"
+    "item": "habitat_and_threat:raw_wildfire_shield"
   },
   "result": {
     "item": "habitat_and_threat:wildfire_shield"

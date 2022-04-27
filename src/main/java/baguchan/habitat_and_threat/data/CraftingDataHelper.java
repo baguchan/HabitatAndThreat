@@ -8,7 +8,6 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Consumer;
@@ -36,7 +35,7 @@ public class CraftingDataHelper extends RecipeProvider {
 	}
 
 	protected static void smithing(Consumer<FinishedRecipe> p_125995_, Item needItem, Item material, Item result) {
-		UpgradeRecipeBuilder.smithing(Ingredient.of(needItem), Ingredient.of(Items.NETHERITE_INGOT), result).unlocks("has_item", has(material)).save(p_125995_, HabitatAndThreat.prefix(getItemName(result) + "_smithing"));
+		UpgradeRecipeBuilder.smithing(Ingredient.of(needItem), Ingredient.of(material), result).unlocks("has_item", has(material)).save(p_125995_, HabitatAndThreat.prefix(getItemName(result) + "_smithing"));
 	}
 
 

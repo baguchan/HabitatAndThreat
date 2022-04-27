@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "habitat_and_threat.refmap.json",
   "mixins": [
+    "CastleCorridorTBalconyPieceMixin",
     "CastleEntranceMixin",
     "EndermiteMixin"
   ],
