@@ -33,7 +33,6 @@ public class ModEntities {
 	public static void registerEntity(RegistryEvent.Register<EntityType<?>> event) {
 		SpawnPlacements.register(ENDERBITE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Enderbite::checkEnderbiteSpawnRules);
 		SpawnPlacements.register(WILDFIRE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
-
 	}
 
 	@SubscribeEvent

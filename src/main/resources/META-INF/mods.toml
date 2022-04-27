@@ -56,10 +56,3 @@ mandatory = true
 versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.habitat_and_threat]]
-modId = "blueprint"
-mandatory = true
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
-versionRange = "[5.3.1,)"
-ordering = "AFTER"
-side = "BOTH"
