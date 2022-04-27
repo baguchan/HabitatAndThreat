@@ -8,5 +8,6 @@
   "block.habitat_and_threat.endermite_egg": "エンダーマイトの卵",
   "entity.habitat_and_threat.enderbite": "エンダーバイト",
   "entity.habitat_and_threat.wildfire": "ワイルドファイア",
-  "death.attack.wildfire.explosion.attack": "%1$sは、%2$sが引き起こした爆発によって焼けた"
+  "death.attack.wildfire.explosion": "%1$sは、%2$sが引き起こした爆発によって焼けた",
+  "death.attack.wildfire_sheild": "%1$sは、%2$sのワイルドファイアの盾に触れて、やけどした"
 }

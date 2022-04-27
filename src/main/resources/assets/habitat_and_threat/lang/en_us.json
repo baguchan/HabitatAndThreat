@@ -8,5 +8,6 @@
   "block.habitat_and_threat.endermite_egg": "Endermite Egg",
   "entity.habitat_and_threat.enderbite": "Enderbite",
   "entity.habitat_and_threat.wildfire": "Wild Fire",
-  "death.attack.wildfire.explosion.attack": "%1$s was burned by a fire explosion from %2$s"
+  "death.attack.habitat_and_threat.wildfire.explosion": "%1$s was burned by a fire explosion from %2$s",
+  "death.attack.habitat_and_threat.wildfire_sheild": "%1$s was burned by a wildfire shield from %2$s"
 }

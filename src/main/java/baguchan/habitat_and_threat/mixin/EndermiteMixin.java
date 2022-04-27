@@ -25,6 +25,7 @@ public abstract class EndermiteMixin extends Monster {
 	public void readAdditionalSaveData(CompoundTag p_32595_) {
 		super.readAdditionalSaveData(p_32595_);
 		this.growing = p_32595_.getInt("Growing");
+
 	}
 
 	public void addAdditionalSaveData(CompoundTag p_32610_) {
