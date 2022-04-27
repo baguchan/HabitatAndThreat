@@ -3,7 +3,6 @@ package baguchan.habitat_and_threat.registry;
 import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.entity.Enderbite;
 import baguchan.habitat_and_threat.entity.WildFire;
-import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -19,11 +18,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = HabitatAndThreat.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
-	private static final EntitySubRegistryHelper HELPERS = HabitatAndThreat.REGISTRY_HELPER.getEntitySubHelper();
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, HabitatAndThreat.MODID);
 
 
-	public static final RegistryObject<EntityType<Enderbite>> ENDERBITE = HELPERS.createLivingEntity("enderbite", Enderbite::new, MobCategory.MONSTER, 0.6F, 0.5F);
+	public static final RegistryObject<EntityType<Enderbite>> ENDERBITE = ENTITIES.register("enderbite", () -> EntityType.Builder.of(Enderbite::new, MobCategory.MONSTER).sized(0.6F, 0.5F).clientTrackingRange(8).build(HabitatAndThreat.MODID + ":enderbite"));
 	public static final RegistryObject<EntityType<WildFire>> WILDFIRE = ENTITIES.register("wildfire", () -> EntityType.Builder.of(WildFire::new, MobCategory.MONSTER).sized(0.6F, 1.95F).fireImmune().clientTrackingRange(8).build(HabitatAndThreat.MODID + ":wildfire"));
 
 
