@@ -193,7 +193,7 @@ public class WildFire extends Blaze {
 					Vec3 vec3 = this.getShieldAndViewVector(getShieldRotation() + id * 90.0F);
 					Vec3 vec31 = vec32.vectorTo(this.position()).normalize();
 					vec31 = new Vec3(vec31.x, 0.0D, vec31.z);
-					if (vec31.dot(vec3) < -0.25D && this.getShieldHealth(id) > 0.0F) {
+					if (vec31.dot(vec3) < -0.35D && this.getShieldHealth(id) > 0.0F) {
 						this.setShieldHealth(getShieldHealth(id) - p_21017_, id);
 						if (getShieldHealth(id) <= 0.0F) {
 							this.playSound(SoundEvents.SHIELD_BREAK, 1.0F, 1.0F);
