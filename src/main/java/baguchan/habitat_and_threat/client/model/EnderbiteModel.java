@@ -3,6 +3,7 @@ package baguchan.habitat_and_threat.client.model;// Made with Blockbench 4.0.3
 // Paste this class into your mod and generate all required imports
 
 
+import baguchan.habitat_and_threat.entity.Enderbite;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -10,9 +11,8 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
 
-public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
+public class EnderbiteModel<T extends Enderbite> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	private final ModelPart head;
 	private final ModelPart body;
@@ -67,12 +67,12 @@ public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		if(!entity.isOnGround()){
+		if (entity.isFlying()) {
 			this.fetherR.xRot = 0.7037F - (0.35F * Mth.cos(ageInTicks * 100F));
 			this.fetherL.xRot = 0.7037F - (0.35F * Mth.cos(ageInTicks * 100F));
 			this.fetherR.yRot = -0.3519F;
 			this.fetherL.yRot = 0.3519F;
-		}else {
+		} else {
 			this.fetherR.xRot = 0.0F;
 			this.fetherL.xRot = 0.0F;
 			this.fetherR.yRot = 0.0F;

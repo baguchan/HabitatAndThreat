@@ -90,6 +90,10 @@ public class Enderbite extends Monster {
 		return 0.12D;
 	}
 
+	public boolean isFlying() {
+		return !this.onGround;
+	}
+
 	public void aiStep() {
 		super.aiStep();
 		if (this.level.isClientSide) {
