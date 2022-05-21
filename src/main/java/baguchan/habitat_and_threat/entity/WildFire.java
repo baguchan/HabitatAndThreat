@@ -268,7 +268,7 @@ public class WildFire extends Blaze {
 
 		public void start() {
 			this.attackStep = 0;
-			this.stompTime = 200;
+			this.stompTime = 240;
 			this.stompCooldown = 0;
 		}
 
@@ -324,7 +324,7 @@ public class WildFire extends Blaze {
 
 
 					if (this.stompTime <= 0) {
-						this.stompCooldown = 200;
+						this.stompCooldown = 400;
 					} else {
 						--this.stompTime;
 
@@ -335,7 +335,7 @@ public class WildFire extends Blaze {
 					if (!flag) {
 						return;
 					}
-					this.stompTime = 100;
+					this.stompTime = 240;
 
 					if (this.attackTime <= 0) {
 						this.attackTime = 20;
