@@ -42,17 +42,17 @@ public class EnderbiteModel<T extends Entity> extends EntityModel<T> {
 
 		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -2.0F, -4.5F, 8.0F, 6.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 18.0F, 0.0F));
 
-		PartDefinition fetherL = body.addOrReplaceChild("fetherL", CubeListBuilder.create().texOffs(34, 0).addBox(0.0F, 0.01F, 0.0F, 5.0F, 1.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.0F, -2.0F, 0.7037F, 0.0F, 0.0F));
+		PartDefinition fetherL = body.addOrReplaceChild("fetherL", CubeListBuilder.create().texOffs(34, 0).addBox(0.0F, -1.99F, 0.0F, 5.0F, 1.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, -2.0F));
 
-		PartDefinition fetherR = body.addOrReplaceChild("fetherR", CubeListBuilder.create().texOffs(0, 15).addBox(-5.0F, 0.01F, 0.0F, 5.0F, 1.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.0F, -2.0F, 0.7037F, 0.0F, 0.0F));
+		PartDefinition fetherR = body.addOrReplaceChild("fetherR", CubeListBuilder.create().texOffs(0, 15).addBox(-5.0F, -0.99F, 0.0F, 5.0F, 1.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.0F, -2.0F));
 
-		PartDefinition legL2 = body.addOrReplaceChild("legL2", CubeListBuilder.create().texOffs(16, 32).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 4.0F, 2.5F));
+		PartDefinition legL2 = body.addOrReplaceChild("legL2", CubeListBuilder.create().texOffs(16, 32).addBox(0.0F, 0.0F, -1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 4.0F, 2.5F));
 
-		PartDefinition legL = body.addOrReplaceChild("legL", CubeListBuilder.create().texOffs(28, 24).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 4.0F, -2.5F));
+		PartDefinition legL = body.addOrReplaceChild("legL", CubeListBuilder.create().texOffs(28, 24).addBox(0.0F, 0.0F, -1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, 4.0F, -2.5F));
 
-		PartDefinition legR = body.addOrReplaceChild("legR", CubeListBuilder.create().texOffs(20, 28).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 4.0F, -2.5F));
+		PartDefinition legR = body.addOrReplaceChild("legR", CubeListBuilder.create().texOffs(20, 28).addBox(-1.0F, 0.0F, -1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 4.0F, -2.5F));
 
-		PartDefinition legR2 = body.addOrReplaceChild("legR2", CubeListBuilder.create().texOffs(20, 24).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 4.0F, 2.5F));
+		PartDefinition legR2 = body.addOrReplaceChild("legR2", CubeListBuilder.create().texOffs(20, 24).addBox(-1.0F, 0.0F, -1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, 4.0F, 2.5F));
 
 		PartDefinition back = body.addOrReplaceChild("back", CubeListBuilder.create().texOffs(26, 15).addBox(-3.0F, 0.0F, -0.5F, 6.0F, 3.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 3.8F, -0.1955F, 0.0F, 0.0F));
 
