@@ -25,6 +25,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		this.toBlock(ModBlocks.ENDERMITE_EGG.get());
 		this.egg(ModItems.WILDFIRE_SPAWN_EGG.get());
 		this.egg(ModItems.ENDERBITE_SPAWN_EGG.get());
+
+		this.singleTex(ModItems.SLIMEND_BUCKET.get());
+		this.toBlock(ModBlocks.SLIMEND_MUD.get());
+		this.toBlock(ModBlocks.PACKED_SLIMEND_MUD.get());
+		this.toBlock(ModBlocks.SLIMEND_MUD_BRICK.get());
 	}
 
 	private ItemModelBuilder generated(String name, ResourceLocation... layers) {

@@ -3,12 +3,18 @@
   "item.habitat_and_threat.enderbite_spawn_egg": "Enderbite SpawnEgg",
   "item.habitat_and_threat.wildfire_shield": "Wild Fire Shield",
   "item.habitat_and_threat.raw_wildfire_shield": "Raw Wild Fire Shield",
+  "item.habitat_and_threat.slimend_bucket": "Slimend Bucket",
   "block.habitat_and_threat.end_grass": "EndGrass",
   "block.habitat_and_threat.enderlawn": "Enderlawn",
   "block.habitat_and_threat.enderbite_cocoon": "Enderbite Cocoon",
   "block.habitat_and_threat.endermite_egg": "Endermite Egg",
+  "block.habitat_and_threat.slimend": "Slimend",
+  "block.habitat_and_threat.slimend_mud": "Slimend Mud",
+  "block.habitat_and_threat.packed_slimend_mud": "Packed Slimend Mud",
+  "block.habitat_and_threat.slimend_mud_brick": "Slimend Mud Brick",
   "entity.habitat_and_threat.enderbite": "Enderbite",
   "entity.habitat_and_threat.wildfire": "Wild Fire",
+  "fluid.habitat_and_threat.slimend": "Slimend",
   "death.attack.habitat_and_threat.wildfire.explosion": "%1$s was burned by a fire explosion from %2$s",
   "death.attack.habitat_and_threat.wildfire_sheild": "%1$s was burned by a wildfire shield from %2$s"
 }

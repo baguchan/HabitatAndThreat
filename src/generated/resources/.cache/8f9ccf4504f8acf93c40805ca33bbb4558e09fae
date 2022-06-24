@@ -1,3 +1,9 @@
-// 1.19	2022-06-24T11:25:11.8968215	HabitatAndThreat blockstates and block models
+// 1.19	2022-06-24T14:33:56.511016	HabitatAndThreat blockstates and block models
 b50d782ef047db0fc6d481ae230944832b014ca0 assets/habitat_and_threat/blockstates/end_grass.json
+1280774716bc054ded3607414238f148a344c5a1 assets/habitat_and_threat/blockstates/packed_slimend_mud.json
+f44dd7fb9f3032dd5348672447b2991555d20543 assets/habitat_and_threat/blockstates/slimend_mud.json
+3dba6cdacdc94e2a6bde5eec0e57cad2681667b8 assets/habitat_and_threat/blockstates/slimend_mud_brick.json
 2b297ecbbec81c984fcd26f821efa1836093960c assets/habitat_and_threat/models/block/end_grass.json
+c63cc9178c9a0ec39c542eb4900d6d461c7e8ca5 assets/habitat_and_threat/models/block/packed_slimend_mud.json
+ce285e70d308f123003cff15f588a8ef4ec96641 assets/habitat_and_threat/models/block/slimend_mud.json
+759ef96d82b209c314f61220adcf6f6733968a5c assets/habitat_and_threat/models/block/slimend_mud_brick.json

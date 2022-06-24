@@ -3,6 +3,7 @@ package baguchan.habitat_and_threat.registry;
 import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.item.RawWildFireShieldItem;
 import baguchan.habitat_and_threat.item.WildFireShieldItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -22,5 +23,7 @@ public class ModItems {
 	public static final RegistryObject<WildFireShieldItem> WILDFIRE_SHIELD = ITEMS.register("wildfire_shield", () -> new WildFireShieldItem(new Item.Properties().stacksTo(1).durability(560).tab(CreativeModeTab.TAB_COMBAT)));
 
 	public static final RegistryObject<RawWildFireShieldItem> RAW_WILDFIRE_SHIELD = ITEMS.register("raw_wildfire_shield", () -> new RawWildFireShieldItem(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MATERIALS)));
+
+	public static final RegistryObject<Item> SLIMEND_BUCKET = ITEMS.register("slimend_bucket", () -> new BucketItem(ModFluids.SLIMEND, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
 }

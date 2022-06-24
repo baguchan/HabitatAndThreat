@@ -2,6 +2,8 @@
   "values": [
     "habitat_and_threat:enderlawn",
     "habitat_and_threat:endermite_egg",
-    "habitat_and_threat:enderbite_cocoon"
+    "habitat_and_threat:enderbite_cocoon",
+    "habitat_and_threat:packed_slimend_mud",
+    "habitat_and_threat:slimend_mud_brick"
   ]
 }

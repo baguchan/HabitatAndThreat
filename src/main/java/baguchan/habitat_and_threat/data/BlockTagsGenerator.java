@@ -16,7 +16,10 @@ public class BlockTagsGenerator extends BlockTagsProvider {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags() {
-		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.ENDERLAWN.get(), ModBlocks.ENDERMITE_EGG.get(), ModBlocks.ENDERBITE_COCOON.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.ENDERLAWN.get(), ModBlocks.ENDERMITE_EGG.get(), ModBlocks.ENDERBITE_COCOON.get())
+				.add(ModBlocks.PACKED_SLIMEND_MUD.get(), ModBlocks.SLIMEND_MUD_BRICK.get());
+		tag(BlockTags.MINEABLE_WITH_SHOVEL).add(ModBlocks.SLIMEND_MUD.get());
+
 		tag(BlockTags.DRAGON_IMMUNE).add(ModBlocks.ENDERLAWN.get());
 		tag(Tags.Blocks.END_STONES).add(ModBlocks.ENDERLAWN.get());
 	}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "habitat_and_threat:item/slimend_bucket"
+  }
+}

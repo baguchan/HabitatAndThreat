@@ -3,12 +3,18 @@
   "item.habitat_and_threat.enderbite_spawn_egg": "エンダーバイトのスポーンエッグ",
   "item.habitat_and_threat.wildfire_shield": "ワイルドファイアのシールド",
   "item.habitat_and_threat.raw_wildfire_shield": "生のワイルドファイアのシールド",
+  "item.habitat_and_threat.slimend_bucket": "スライメンド入りのバケツ",
   "block.habitat_and_threat.end_grass": "エンドの草",
   "block.habitat_and_threat.enderlawn": "エンダーラウン",
   "block.habitat_and_threat.enderbite_cocoon": "エンダーバイトの繭",
   "block.habitat_and_threat.endermite_egg": "エンダーマイトの卵",
+  "block.habitat_and_threat.slimend": "スライメンド",
+  "block.habitat_and_threat.slimend_mud": "スライメンドの泥",
+  "block.habitat_and_threat.packed_slimend_mud": "固めたスライメンドの泥",
+  "block.habitat_and_threat.slimend_mud_brick": "スライメンドの泥レンガ",
   "entity.habitat_and_threat.enderbite": "エンダーバイト",
   "entity.habitat_and_threat.wildfire": "ワイルドファイア",
+  "fluid.habitat_and_threat.slimend": "スライメンド",
   "death.attack.wildfire.explosion": "%1$sは、%2$sが引き起こした爆発によって焼けた",
   "death.attack.wildfire_sheild": "%1$sは、%2$sのワイルドファイアの盾に触れて、やけどした"
 }

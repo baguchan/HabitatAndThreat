@@ -23,6 +23,9 @@ public class BlockstateGenerator extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		this.crossBlock(ModBlocks.END_GRASS.get());
+		this.simpleBlock(ModBlocks.SLIMEND_MUD.get());
+		this.simpleBlock(ModBlocks.PACKED_SLIMEND_MUD.get());
+		this.simpleBlock(ModBlocks.SLIMEND_MUD_BRICK.get());
 	}
 
 

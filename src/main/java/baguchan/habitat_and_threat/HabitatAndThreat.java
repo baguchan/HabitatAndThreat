@@ -32,6 +32,8 @@ public class HabitatAndThreat {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		ModFluidTypes.FLUID_TYPES.register(bus);
+		ModFluids.FLUIDS.register(bus);
 		ModBlocks.BLOCKS.register(bus);
 		ModEntities.ENTITIES.register(bus);
 		ModItems.ITEMS.register(bus);

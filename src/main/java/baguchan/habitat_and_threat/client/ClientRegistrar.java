@@ -9,6 +9,7 @@ import baguchan.habitat_and_threat.client.render.WildFireRender;
 import baguchan.habitat_and_threat.client.render.item.WildFireShieldBWLR;
 import baguchan.habitat_and_threat.registry.ModBlocks;
 import baguchan.habitat_and_threat.registry.ModEntities;
+import baguchan.habitat_and_threat.registry.ModFluids;
 import baguchan.habitat_and_threat.registry.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -16,6 +17,7 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -43,10 +45,16 @@ public class ClientRegistrar {
 	public static void renderBlockLayer() {
 		setRenderLayer(ModBlocks.ENDERLAWN.get(), RenderType.cutoutMipped());
 		setRenderLayer(ModBlocks.END_GRASS.get(), RenderType.cutout());
+		setRenderLayer(ModFluids.SLIMEND.get(), RenderType.translucent());
+		setRenderLayer(ModFluids.SLIMEND_FLOW.get(), RenderType.translucent());
 	}
 
 	private static void setRenderLayer(Block block, RenderType type) {
 		ItemBlockRenderTypes.setRenderLayer(block, type::equals);
+	}
+
+	private static void setRenderLayer(Fluid fluid, RenderType type) {
+		ItemBlockRenderTypes.setRenderLayer(fluid, type::equals);
 	}
 
 	public static void setup(FMLCommonSetupEvent event) {
