@@ -1,0 +1,54 @@
+{
+  "modifiers": [
+    {
+      "type": "surface_rule",
+      "config": {
+        "surface_rule": {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "blueprint:modded_slice",
+            "slice_name": "habitat_and_threat:habitat_biome"
+          },
+          "then_run": {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "habitat_and_threat:end_wild"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:stone_depth",
+                    "add_surface_depth": false,
+                    "offset": 0,
+                    "secondary_depth_range": 0,
+                    "surface_type": "floor"
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "habitat_and_threat:enderlawn"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:end_stone"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:the_end"
+}

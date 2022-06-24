@@ -2,14 +2,13 @@ package baguchan.habitat_and_threat.world.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 import net.minecraftforge.common.Tags;
-
-import java.util.Random;
 
 public class EndVegetationFeature extends Feature<BlockStateConfiguration> {
 	public EndVegetationFeature(Codec<BlockStateConfiguration> p_66361_) {
@@ -21,7 +20,7 @@ public class EndVegetationFeature extends Feature<BlockStateConfiguration> {
 		BlockPos blockpos = p_160068_.origin();
 		BlockState blockstate = worldgenlevel.getBlockState(blockpos.below());
 		BlockStateConfiguration config = p_160068_.config();
-		Random random = p_160068_.random();
+		RandomSource random = p_160068_.random();
 		if (!blockstate.is(Tags.Blocks.END_STONES)) {
 			return false;
 		} else {

@@ -1,0 +1,41 @@
+{
+  "selector": {
+    "type": "names",
+    "config": [
+      "minecraft:the_end"
+    ],
+    "conditions": [
+      {
+        "modid": "blueprint",
+        "type": "forge:mod_loaded"
+      }
+    ]
+  },
+  "name": "habitat_and_threat:habitat_biome",
+  "weight": 4,
+  "provider": {
+    "overlays": [
+      {
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "biomes": [
+            {
+              "biome": "habitat_and_threat:end_wild",
+              "parameters": {
+                "continentalness": 0.0,
+                "depth": 0.0,
+                "erosion": 0.0,
+                "humidity": 0.25,
+                "offset": 0.0,
+                "temperature": -0.5,
+                "weirdness": 0.0
+              }
+            }
+          ]
+        },
+        "matches_biomes": "#minecraft:has_structure/end_city"
+      }
+    ],
+    "type": "blueprint:overlay"
+  }
+}

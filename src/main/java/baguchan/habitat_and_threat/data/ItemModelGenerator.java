@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemModelGenerator extends ItemModelProvider {
 	public ItemModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -44,7 +45,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private ItemModelBuilder singleTex(Item item) {
-		return generated(item.getRegistryName().getPath(), prefix("item/" + item.getRegistryName().getPath()));
+		return generated(ForgeRegistries.ITEMS.getKey(item).getPath(), prefix("item/" + ForgeRegistries.ITEMS.getKey(item).getPath()));
 	}
 
 	private ItemModelBuilder bowItem(String name, ResourceLocation... layers) {
@@ -56,25 +57,25 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private void woodenButton(Block button, String variant) {
-		getBuilder(button.getRegistryName().getPath())
+		getBuilder(ForgeRegistries.BLOCKS.getKey(button).getPath())
 				.parent(getExistingFile(mcLoc("block/button_inventory")))
 				.texture("texture", "block/wood/planks_" + variant + "_0");
 	}
 
 	private void woodenFence(Block fence, Block block) {
-		getBuilder(fence.getRegistryName().getPath())
+		getBuilder(ForgeRegistries.BLOCKS.getKey(fence).getPath())
 				.parent(getExistingFile(mcLoc("block/fence_inventory")))
-				.texture("texture", "block/" + block.getRegistryName().getPath());
+				.texture("texture", "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath());
 	}
 
 	private void woodenFence(Block fence, String texture) {
-		getBuilder(fence.getRegistryName().getPath())
+		getBuilder(ForgeRegistries.BLOCKS.getKey(fence).getPath())
 				.parent(getExistingFile(mcLoc("block/fence_inventory")))
 				.texture("texture", "block/" + texture);
 	}
 
 	private void toBlock(Block b) {
-		toBlockModel(b, b.getRegistryName().getPath());
+		toBlockModel(b, ForgeRegistries.BLOCKS.getKey(b).getPath());
 	}
 
 	private void toBlockModel(Block b, String model) {
@@ -86,7 +87,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private void toBlockModel(Block b, ResourceLocation model) {
-		withExistingParent(b.getRegistryName().getPath(), model);
+		withExistingParent(ForgeRegistries.BLOCKS.getKey(b).getPath(), model);
 	}
 
 	public ItemModelBuilder itemBlockFlat(Block block) {
@@ -99,11 +100,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	public ItemModelBuilder egg(Item item) {
-		return withExistingParent(item.getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));
+		return withExistingParent(ForgeRegistries.ITEMS.getKey(item).getPath(), mcLoc("item/template_spawn_egg"));
 	}
 
 	public String blockName(Block block) {
-		return block.getRegistryName().getPath();
+		return ForgeRegistries.BLOCKS.getKey(block).getPath();
 	}
 
 	@Override

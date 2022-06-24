@@ -1,11 +1,9 @@
 package baguchan.habitat_and_threat;
 
 import baguchan.habitat_and_threat.client.ClientRegistrar;
-import baguchan.habitat_and_threat.registry.ModBiomes;
-import baguchan.habitat_and_threat.registry.ModBlocks;
-import baguchan.habitat_and_threat.registry.ModEntities;
-import baguchan.habitat_and_threat.registry.ModItems;
+import baguchan.habitat_and_threat.registry.*;
 import baguchan.habitat_and_threat.world.gen.ModPlacements;
+import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,6 +19,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(HabitatAndThreat.MODID)
 public class HabitatAndThreat {
 	public static final String MODID = "habitat_and_threat";
+
+	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MODID);
+
 	public HabitatAndThreat() {
 		// Register the setup method for modloading
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -34,6 +35,8 @@ public class HabitatAndThreat {
 		ModBlocks.BLOCKS.register(bus);
 		ModEntities.ENTITIES.register(bus);
 		ModItems.ITEMS.register(bus);
+		ModFeatures.FEATURES.register(bus);
+		REGISTRY_HELPER.register(bus);
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
 		DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientRegistrar::setup));

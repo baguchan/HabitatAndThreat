@@ -8,7 +8,6 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,16 +27,12 @@ public class ModEntities {
 	private static String prefix(String path) {
 		return HabitatAndThreat.MODID + "." + path;
 	}
-
-	@SubscribeEvent
-	public static void registerEntity(RegistryEvent.Register<EntityType<?>> event) {
-		SpawnPlacements.register(ENDERBITE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Enderbite::checkEnderbiteSpawnRules);
-		SpawnPlacements.register(WILDFIRE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
-	}
-
 	@SubscribeEvent
 	public static void registerEntityAttribute(EntityAttributeCreationEvent event) {
 		event.put(ENDERBITE.get(), Enderbite.createAttributes().build());
 		event.put(WILDFIRE.get(), WildFire.createAttributes().build());
+		SpawnPlacements.register(ENDERBITE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Enderbite::checkEnderbiteSpawnRules);
+		SpawnPlacements.register(WILDFIRE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
+
 	}
 }

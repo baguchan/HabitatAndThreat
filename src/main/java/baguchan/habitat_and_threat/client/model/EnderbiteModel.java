@@ -68,8 +68,8 @@ public class EnderbiteModel<T extends Enderbite> extends EntityModel<T> {
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		if (entity.isFlying()) {
-			this.fetherR.xRot = 0.7037F - (0.35F * Mth.cos(ageInTicks * 100F));
-			this.fetherL.xRot = 0.7037F - (0.35F * Mth.cos(ageInTicks * 100F));
+			this.fetherR.xRot = 0.7037F - (0.35F * Mth.cos(ageInTicks * 1.2F));
+			this.fetherL.xRot = 0.7037F - (0.35F * Mth.cos(ageInTicks * 1.2F));
 			this.fetherR.yRot = -0.3519F;
 			this.fetherL.yRot = 0.3519F;
 		} else {

@@ -4,16 +4,14 @@ import baguchan.habitat_and_threat.HabitatAndThreat;
 import baguchan.habitat_and_threat.world.feature.EndVegetationFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
-@Mod.EventBusSubscriber(modid = HabitatAndThreat.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModFeatures {
-	public static final Feature<BlockStateConfiguration> END_VEGETATION = new EndVegetationFeature(BlockStateConfiguration.CODEC);
 
-	@SubscribeEvent
-	public static void registerFeature(RegistryEvent.Register<Feature<?>> event) {
-		event.getRegistry().register(END_VEGETATION.setRegistryName("end_vegetation"));
-	}
+	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, HabitatAndThreat.MODID);
+
+	public static final RegistryObject<Feature<BlockStateConfiguration>> END_VEGETATION = FEATURES.register("end_vegetation", () -> new EndVegetationFeature(BlockStateConfiguration.CODEC));
+
 }

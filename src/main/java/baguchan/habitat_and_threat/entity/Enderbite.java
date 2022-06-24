@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -27,7 +28,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class Enderbite extends Monster {
 	public Enderbite(EntityType<? extends Monster> p_33002_, Level p_33003_) {
@@ -108,7 +108,7 @@ public class Enderbite extends Monster {
 		}
 	}
 
-	public static boolean checkEnderbiteSpawnRules(EntityType<Enderbite> p_29424_, LevelAccessor p_29425_, MobSpawnType p_29426_, BlockPos p_29427_, Random p_29428_) {
+	public static boolean checkEnderbiteSpawnRules(EntityType<Enderbite> p_29424_, LevelAccessor p_29425_, MobSpawnType p_29426_, BlockPos p_29427_, RandomSource p_29428_) {
 		if (checkAnyLightMonsterSpawnRules(p_29424_, p_29425_, p_29426_, p_29427_, p_29428_)) {
 			BlockState blockstate = p_29425_.getBlockState(p_29427_.below());
 			return blockstate.is(Blocks.END_STONE) || blockstate.is(ModBlocks.ENDERLAWN.get());
